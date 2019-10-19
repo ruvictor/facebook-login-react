@@ -25,10 +25,10 @@ export default class Facebook extends Component {
     }
 
     render(){
-        let fbContent;
+        let facebookData;
 
         this.state.auth ?
-            fbContent = (
+        facebookData = (
                 <div style={{
                     width: '400px',
                     margin: 'auto',
@@ -40,7 +40,7 @@ export default class Facebook extends Component {
                     <h2>Welcome {this.state.name}!</h2>
                 </div>
             ) : 
-            fbContent = (<FacebookLogin
+            facebookData = (<FacebookLogin
                 appId="534254773"
                 autoLoad={true}
                 fields="name,picture"
@@ -48,9 +48,9 @@ export default class Facebook extends Component {
                 callback={this.responseFacebook} />);
 
         return (
-            <div>
-                {fbContent}
-            </div>
+            <>
+                {facebookData}
+            </>
         );
     }
 }
